@@ -10,20 +10,21 @@ app.use(express.json());
 app.use(bodyparser.json());
 
 const User = require('./models/user');
+const Expense = require('./models/expenses');
 
 const UserRoutes = require('./router/user');
 
 app.use(cors());
 
 const dotenv = require('dotenv');
-
 // get config vars
 dotenv.config();
 
-//app.use('/signup', UserRoutes);
-app.use('/user', UserRoutes)
-// app.set('view engine', 'ejs');
-// app.set('views', 'views');
+User.hasMany(Expense);
+Expense.belongsTo(User);
+
+app.use('/user', UserRoutes);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync()

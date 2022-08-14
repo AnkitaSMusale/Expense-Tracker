@@ -17,7 +17,6 @@ createAcc.addEventListener('click', (e) => {
         msg.innerHTML='please enter all fields';
         setTimeout(()=>msg.remove(),3000);
     }
-   // console.log(expense,desc,category);
    else{
         let obj = {
             name: name.value,

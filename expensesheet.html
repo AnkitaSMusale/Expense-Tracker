@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="expensesheet.css">
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+        <h4> Day to Day Expenses </h4>
+    </header>
+    <section class="container">
+        <form id="my_form">
+            <div class="msg"></div>
+            <div>
+                <label for="amt"> Add an expense amount : </label>
+                <input id="amt" type="text" id="amt" name="amt" placeholder="In ₹">
+
+                <label for="descr"> Add a description : </label>
+                <input id="descr" type="text" id="descr" name="descr" placeholder="add description here...">
+            
+                <label for="categ">Choose a Category:</label>
+                <!-- <input id="categ" type="text" id="categ" name="categ">-->
+               <select id="categ" type="text" class="categ" name="categ" selected:none >
+                    <option value="none" selected></option>
+                    <option value="work">work</option>
+                    <option value="Fuel">Fuel</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Travelling">Travelling</option>
+                    <option value="Food">Food</option>
+                    <option value="other">other</option>
+                </select>
+                
+            <input class="btn" type="submit" value="Add Expense">
+            </div>  
+        </form>
+        <ul id="Users"></ul>   
+    </section>
+    <button class="logout" id="logout">Logout</button>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"> </script>
+    <script src="expensesheet.js"></script>
+    
+</body>
+</html> 

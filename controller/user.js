@@ -36,7 +36,7 @@ const jwt = require('jsonwebtoken');
             .then(() => {
                 res.status(201).json({message: 'Successfuly create new user'})
             }).catch(err => {
-                console.log('not working');
+                console.log('Error occured');
                 res.status(403).json(err);
             })
 
@@ -63,7 +63,7 @@ const login = (req, res) => {
                     console.log(JSON.stringify(user))
                     const jwttoken = generateAccessToken(user[0].id);
                     res.json({token: jwttoken, success: true, message: 'Successfully Logged In'})
-                // Send JWT
+               
                 } else {
                 // response is OutgoingMessage object that server response http request
                 return res.status(401).json({success: false, message: 'passwords do not match'});

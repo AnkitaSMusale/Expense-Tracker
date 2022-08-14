@@ -20,6 +20,10 @@ const authenticate = (req,res,next) => {
         return res.status(401).json({success: false})
     }
 }
+
+module.exports = {
+    authenticate
+}
 /*
 const jwt = require('jsonwebtoken');
 const User = require('../models/users');
