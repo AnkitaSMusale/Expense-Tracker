@@ -21,22 +21,16 @@ createAcc.addEventListener('click', (e) => {
         let obj = {
             name: name.value,
             email: email.value,
-            phone:phone.value,
+            phone: phone.value,
             password: password.value
         }
         console.log(obj);
-        // axios.post('http://localhost:3000/user/signup',obj)
-        //     .then(res=>{
-        //         alert(res.data.message)
-        //     })
-        //     .catch(err=>{
-        //         console.log(err.response.data.message)
-        //     })
-         //axios.post('http://localhost:3000', obj)
+    
          axios.post('http://localhost:3000/user/signup',obj)
             .then(res => {
                 console.log(res)
-                alert("successfully signed up")
+                alert("Account created successfully ")
+                window.location.href='./expensesheet.html';
             }).catch(err => {
                 alert("user alreaady exist! Please login");
                 console.log(err)

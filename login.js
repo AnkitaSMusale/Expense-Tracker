@@ -1,5 +1,6 @@
 const login = document.getElementById('login');
 const myform = document.getElementById('login-form');
+const msg = document.getElementById('msg');
 
 login.addEventListener('click', (e) => {
     e.preventDefault();

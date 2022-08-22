@@ -11,8 +11,12 @@ app.use(bodyparser.json());
 
 const User = require('./models/user');
 const Expense = require('./models/expenses');
+const Order=require('./models/order')
+const ForgetPassword = require('./models/forgotpassword')
 
 const UserRoutes = require('./router/user');
+const premiumRoutes=require('./router/premium')
+const forgotRoutes = require('./router/forgot')
 
 app.use(cors());
 
@@ -23,7 +27,16 @@ dotenv.config();
 User.hasMany(Expense);
 Expense.belongsTo(User);
 
+User.hasOne(Order)
+Order.belongsTo(User)
+
+
+User.hasMany(ForgetPassword)
+ForgetPassword.belongsTo(User)
+
 app.use('/user', UserRoutes);
+app.use(premiumRoutes)
+app.use(forgotRoutes)
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -1,19 +1,3 @@
-// const User = require('../models/user');
-
-// exports.postAddUser = (req, res, next) => {
-//     const name = req.body.name;
-//     const email = req.body.email;
-//     const phone = req.body.phone;
-//     const password = req.body.password;
-//     // const user = new User(name, email, phone, password);
-//     // return user.save();
-//     User.create({ name, email, phone, password}).then(() => {
-//         res.status(201).json({ message: 'Successfuly create new user' })
-//     }).catch(err => {
-//         res.status(403).json(err);
-//     })
-// }
-
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
@@ -34,7 +18,7 @@ const jwt = require('jsonwebtoken');
             }
             User.create({ name, email, phone, password: hash })
             .then(() => {
-                res.status(201).json({message: 'Successfuly create new user'})
+                res.status(201).json({message: 'Successfully created a new user'})
             }).catch(err => {
                 console.log('Error occured');
                 res.status(403).json(err);

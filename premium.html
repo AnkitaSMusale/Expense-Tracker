@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./premium.css">
+</head>
+<body>
+  <header>
+     <h1>Expense Tracker</h1>
+     <h4> Welcome to the Premium Account </h4>
+  </header>
+  <div class="msg" id="msg"></div>
+  <section class="container">
+      <form id="my_form">
+          <div>
+              <label for="amt"> Add an expense amount : </label>
+              <input id="amt" type="text" id="amt" name="amt" placeholder="In ₹">
+
+              <label for="descr"> Add a description : </label>
+              <input id="descr" type="text" id="descr" name="descr" placeholder="add description here...">
+          
+              <label for="categ">Choose a Category:</label>
+              <!-- <input id="categ" type="text" id="categ" name="categ">-->
+             <select id="categ" type="text" class="categ" name="categ" selected:none >
+                  <option value="none" selected></option>
+                  <option value="work">work</option>
+                  <option value="Fuel">Fuel</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Travelling">Travelling</option>
+                  <option value="Food">Food</option>
+                  <option value="other">other</option>
+              </select>
+          <input class="adbtn" id="btn1" type="submit" value="Add Expense">
+          </div>  
+          </form>
+          <div id="getExpense">
+            <button class="getExpense" id="getExpense">Get Expense</button>
+          </div>
+          
+          <div id="list" class="list">
+            <h2> Daily Expense Report</h2>
+            <!-- <div class="col" id="col">
+                <label for="date">Date</label>
+                <label for="Descr">Description</label>
+                <label for="Descr">Category</label>
+                <label for="Descr">Income</label>
+                <label for="date">Expenses</label>
+              
+            </div> -->
+              <ul id="Users"></ul>
+              <div id="prn" class="prn">
+                <button id="print" class="print">Print</button>
+                <button id="dwnldbtn" class="dwnldbtn">Download</button>
+              </div>
+          </div>   
+          
+  </section>
+
+
+
+  <br>
+  <section class="toggle-container">
+    <button id="logout" class="btn">Logout</button>
+    <input type="checkbox" id="toggle" name="toggle" /><label
+        for="toggle"
+    ></label>
+
+  </section>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1196.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./premium.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</body>
+</html>

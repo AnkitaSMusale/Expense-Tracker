@@ -9,12 +9,22 @@
 </head>
 <body>
     <header>
+        <button class="premium" id="premium"><strong>Buy Premium Membership</strong></button><br>
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <button id="close">&times;</button>
+                <h1>Expense Tracker Premium</h1>
+                <p>Buy at INR 499 only</p>
+                <input type="submit" id="pay" value="Pay Now">
+            </div>
+          </div>
         <h1>Expense Tracker</h1>
         <h4> Day to Day Expenses </h4>
     </header>
+    
+    <div class="msg"></div>
     <section class="container">
         <form id="my_form">
-            <div class="msg"></div>
             <div>
                 <label for="amt"> Add an expense amount : </label>
                 <input id="amt" type="text" id="amt" name="amt" placeholder="In ₹">
@@ -33,13 +43,27 @@
                     <option value="Food">Food</option>
                     <option value="other">other</option>
                 </select>
-                
-            <input class="btn" type="submit" value="Add Expense">
+            <input class="btn" id="btn1" type="submit" value="Add Expense">
             </div>  
-        </form>
-        <ul id="Users"></ul>   
+            </form>
+            <button class="getExpense" id="getExpense">Get Expense</button>
+            <hr>
+            <div id="list" class="list">
+                <ul id="Users">
+                </ul>
+                <!-- <section class="pagination" id="pagination">
+                    <a href="/?page=1">1</a>
+                    <a href="/?page=2">2</a>
+                </section>
+                <div>
+                </div>     -->
+                <div id="dwnld" class="dwnld">
+                    <button id="dwnldbtn" class="dwnldbtn">Download</button>
+                </div>
+            </div>   
     </section>
     <button class="logout" id="logout">Logout</button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"> </script>
     <script src="expensesheet.js"></script>
     
